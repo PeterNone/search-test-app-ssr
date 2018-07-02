@@ -1,0 +1,293 @@
+@import './bootstrap/_variables.scss';
+@import './bootstrap/stylesheets/_bootstrap.scss';
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+* {
+	outline: none !important;
+}
+
+html, body, .App, #root {
+	height: 100%;
+	min-height: 100%;
+}
+
+
+.browserupgrade {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	padding: 20px;
+	background-color: #ffffff;
+	z-index: 10000;
+}
+
+
+.navbar {
+	border: none;
+	background-color: $brand-primary;
+	
+	.navbar-brand {
+		position: relative;
+		z-index: 2;
+		color: #ffffff;
+		
+		$nav-bar-logo-height: 40px;
+		$nav-bar-logo-padding-y: ($navbar-height - $nav-bar-logo-height) / 2;
+		
+		padding-top: $nav-bar-logo-padding-y;
+		padding-bottom: $nav-bar-logo-padding-y;
+		
+		.navbar-form {
+			z-index: 1;	
+		}
+		
+		img {
+			
+			height: $nav-bar-logo-height;
+			width: auto;
+			margin:0;
+		}
+	}
+}
+
+
+@media (max-width: $screen-xs-max) {
+
+	.navbar {
+
+		.navbar-form.navbar-right {
+			position: absolute;
+			right: $grid-gutter-width / 2;
+			padding-left: 80px;
+		}
+	}
+}
+
+
+
+
+a, button {
+	@include transition(color .3s ease, background-color .3s ease, border .3s ease);
+}
+
+
+.full-div {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+
+.display-table {
+	display: table;
+}
+.display-table-row {
+	display: table-row;
+}
+.display-table-cell {
+	display: table-cell;
+}
+.display-table-row-100 {
+	display: table-row;
+	height: 100%;
+}
+.display-table-cell-100 {
+	display: table-cell;
+	height: 100%;
+	vertical-align: middle;
+}
+
+
+.input-group {
+	position: relative;
+	
+	.error-input {
+		position: absolute;
+		padding: 2px 50px 0px 0px;
+		top: 0px;
+		right: 0px;
+		pointer-events: none;
+		z-index: 10;
+	}
+}
+
+
+
+//Helpers
+
+
+.m-t-xxlg {
+	margin-top: 60px !important;
+}
+.m-t-xlg {
+	margin-top: 45px !important;
+}
+.m-t-lg {
+	margin-top: 30px !important;
+}
+.m-t-md {
+	margin-top: 15px !important;
+}
+.m-t-sm {
+	margin-top: 10px !important;
+}
+.m-t-xs {
+	margin-top: 5px !important;
+}
+.m-t-0 {
+	margin-top: 0px !important;
+}
+.m-b-xxlg {
+	margin-bottom: 60px !important;
+}
+.m-b-xlg {
+	margin-bottom: 45px !important;
+}
+.m-b-lg {
+	margin-bottom: 30px !important;
+}
+.m-b-md {
+	margin-bottom: 15px !important;
+}
+.m-b-sm {
+	margin-bottom: 10px !important;
+}
+.m-b-xs {
+	margin-bottom: 5px !important;
+}
+.m-b-0 {
+	margin-bottom: 0px !important;
+}
+
+.m-r-md {
+	margin-right: 15px !important;
+}
+
+.p-t-xxlg {
+	padding-top: 60px !important;
+}
+.p-t-xlg {
+	padding-top: 45px !important;
+}
+.p-t-lg {
+	padding-top: 30px !important;
+}
+.p-t-md {
+	padding-top: 15px !important;
+}
+.p-t-sm {
+	padding-top: 10px !important;
+}
+.p-t-xs {
+	padding-top: 5px !important;
+}
+.p-t-0 {
+	padding-top: 0px !important;
+}
+.p-b-xxlg {
+	padding-bottom: 60px !important;
+}
+.p-b-xlg {
+	padding-bottom: 45px !important;
+}
+.p-b-lg {
+	padding-bottom: 30px !important;
+}
+.p-b-md {
+	padding-bottom: 15px !important;
+}
+.p-b-sm {
+	padding-bottom: 10px !important;
+}
+.p-b-xs {
+	padding-bottom: 5px !important;
+}
+.p-b-0 {
+	padding-bottom: 0px !important;
+}
+
+
+
+.thumbnail {
+	.thumbnail-image-bg {
+		padding-bottom: 100%;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		background-size: contain;
+	}
+
+	.caption-header {
+		height: 45px;
+		min-height: 58px;
+		overflow: hidden;
+	}
+}
+
+.recharts-wrapper {
+	display: inline-block;
+	vertical-align: middle;
+	margin: -15px 0px 0px $grid-gutter-width / 2;
+	line-height: 1.1;
+	
+	.recharts-curve {
+		
+		&.recharts-area-area {
+			fill: $brand-primary !important;
+		}
+		
+		&.recharts-area-curve {
+			stroke: $brand-primary !important;
+		}
+	}
+}
+
+
+
+.fade-thumb-enter {
+	opacity: 0.01;
+	transform: translateY(30px);
+}
+
+.fade-thumb-enter.fade-thumb-enter-active {
+	opacity: 1;
+	transform: translateY(0px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+
+.fade-enter {
+	position: absolute;
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+
+@media (max-width: $screen-xs-min) {
+	.col-xs-6.col-xs-min-full {
+		width: 100%;
+	}
+}
