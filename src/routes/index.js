@@ -1,5 +1,7 @@
 import ProductResult from "../containers/product/product-result";
-import productDetails from "../containers/product/product-details";
+import ProductDetails from "../containers/product/product-details";
+import SearchContainer from '../containers/search/search-container';
+
 import { startSearch, fetchProduct } from './../actions';
 
 const routes = [
@@ -12,8 +14,13 @@ const routes = [
 	{
 		path: '/product/:id',
 		exact: true,
-		component: productDetails,
+		component: ProductDetails,
 		fetchInitialData: (path = '') => fetchProduct(path.split('/').pop())
+	},
+	{
+		path: '*',
+		exact: false,
+		component: SearchContainer
 	}
 ]
 

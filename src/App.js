@@ -4,8 +4,6 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import routes from './routes';
 
-import SearchContainer from './containers/search/search-container';
-
 
 class App extends Component {
 	render() {
@@ -35,7 +33,6 @@ class App extends Component {
 											/>
 										)
 									)}
-									<Route component={SearchContainer} />
 								</Switch>
 							</CSSTransition>
 						</TransitionGroup>
