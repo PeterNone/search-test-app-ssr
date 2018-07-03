@@ -18,13 +18,13 @@ router.use('/api', proxy(
 	}
 ));
 
+router.use('^/$', serverRenderer);
+
 router.use(express.static(
 	path.resolve(__dirname, '..', 'build'),
-		{ maxAge: '30d' },
-	)
-);
+	{ maxAge: '30d' },
+));
 
-router.use('^/$', serverRenderer);
 router.use('^/', serverRenderer);
 
 

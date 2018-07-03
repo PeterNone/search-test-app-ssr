@@ -15,9 +15,7 @@ import App from '../../src/App';
 const path = require("path");
 const fs = require("fs");
 
-export default (req, res, next) => {	
-	console.log(req.url);
-	
+export default (req, res, next) => {
 	const activeRoute = routes.find((route) => matchPath(req.url, route)) || {};
 	
 	const store = createStore(
